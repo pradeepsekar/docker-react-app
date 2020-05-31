@@ -11,7 +11,8 @@ useEffect(() => {
 }, [reload])
 
 function getAllPersons() {
-    const hostName = window.location.hostName;
+    console.log(window.location.hostname);
+    const hostName = window.location.hostname;
 fetch('http://' + hostName+ ':8081/api/persons/')
   .then(response => response.json())
   .then(data => handleApiRespose(data));
